@@ -1,0 +1,23 @@
+<%- include('../cabecalho.ejs') %>
+    <form method="post" enctype="multipart/form-data"> 
+        Placa<br>
+        <input type="text" name="placa" placeholder="Informe a placa do carro">
+        <br><br>
+        Marca<br>
+        <input type="text" name="marca" placeholder='Informe a marca do carro'>
+        <br><br>
+        Ano<br>
+        <input type="date" name="ano" placeholder="Informe o ano em que o carro foi fabricado">
+        <br><br>
+        Modelo<br>
+        <input type="text" name="modelo" placeholder='Informe o modelo do carro'>
+        <br><br>
+        Dono<br>
+        <input type="text" name="dono" placeholder='Informe o nome do dono'>
+        <br><br>
+        Foto<br>
+        <input type="file" name="foto">
+        <br><br>
+        <input type="submit" value="Adicionar">
+    </form>
+<%- include('../rodape.ejs') %>

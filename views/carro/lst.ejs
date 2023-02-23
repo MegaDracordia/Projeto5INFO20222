@@ -1,0 +1,34 @@
+<%- include('../cabecalho.ejs') %>
+    <form method="post">
+        <input type="text" name="pesquisar">
+        <input type="submit" value="Pesquisar" class="btn btn-primary">
+    </form>
+
+    <table>
+        <tr>
+            <th style="text-align: justify">Id</th>
+            <th style="text-align: justify">Placa</th>
+            <th style="text-align: justify">Marca</th>
+            <th style="text-align: justify">Ano</th>
+            <th style="text-align: justify">Modelo</th>
+            <th style="text-align: justify">Dono</th>
+            <th style="text-align: justify">Foto</th>
+            <th style="text-align: justify">Editar</th>
+            <th style="text-align: justify">Deletar</th>
+        </tr>
+        <% Carros.forEach(function(carro){%>
+        <tr>
+            <td style="text-align: justify"><%=carro._id %></td>
+            <td style="text-align: justify"><%=carro.placa %></td>
+            <td style="text-align: justify"><%=carro.marca %></td>
+            <td style="text-align: justify"><%=carro.ano %></td>
+            <td style="text-align: justify"><%=carro.modelo %></td>
+            <td style="text-align: justify"><%=carro.dono %></td>
+            <td style="text-align: justify"><img style="max-width: 100px; max-height: 100px;" src="/fotos/<%=carro.foto%>" alt="Foto do Carro"></td>
+            <td style="text-align: justify"><a href="/admin/carro/edt/<%=carro.id %>">Editar</a></td>
+            <td style="text-align: justify"><a href="/admin/carro/del/<%=carro.id %>">Excluir</a></td>
+        </tr>
+        <% })%>
+    </table>
+<%- include('../rodape.ejs') %>
+    

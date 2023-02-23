@@ -1,0 +1,24 @@
+<%- include('../cabecalho.ejs') %>
+    <form method="post" enctype="multipart/form-data">
+        <br><br>
+        Id<br>
+        <input type="text" name="id" readonly value="<%=Mecanico._id%>">
+        <br><br>
+        Nome<br>
+        <input type="text" name="nome" placeholder="Informe seu nome" value="<%=Mecanico.nome%>">
+        <br><br>
+        Email<br>
+        <input type="email" name="email" placeholder='Informe seu email' value="<%=Mecanico.email%>">
+        <br><br>
+        Celular<br>
+        <input type="text" name="celular" placeholder="Digite seu celular" value="<%=Mecanico.celular%>">
+        <br><br>
+        CPF<br>
+        <input type="text" name="cpf" placeholder='Informe seu CPF' value="<%=Mecanico.cpf%>">
+        <br><br>
+        Foto<br>
+        <input type="file" name="foto">
+        <br><br>
+        <input type="submit" value="Editar">
+    </form>
+<%- include('../rodape.ejs') %>

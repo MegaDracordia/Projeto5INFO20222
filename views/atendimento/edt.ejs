@@ -1,0 +1,24 @@
+<%- include('../cabecalho.ejs') %>
+    <form method="post">
+        Id<br>
+        <input class="form-control" type="text" name="id" readonly value="<%=Atendimento._id%>">
+        <br><br>
+        Carro<br>
+        <select class="form-select" name="carro" aria-label="Selecione um carro">
+            <% Carros.forEach(function(carro) { %>
+              <option value="<%= carro._id %>"><%= carro.placa %></option>
+            <% }); %>
+        </select>
+        Problema<br>
+        <textarea class="form-control" name="descricaoProblema" placeholder="Informe o problema"><%=Atendimento.descricaoProblema%></textarea>
+        <br><br>
+        Mecânico<br>
+        <select class="form-select" name="mecanico" aria-label="Selecione um mecânico" multiple>
+            <% Mecanicos.forEach(function(mecanico) { %>
+              <option value="<%= mecanico._id %>"><%= mecanico.nome %></option>
+            <% }); %>
+        </select>
+        <br><br>
+        <input type="submit" value="Editar">
+    </form>
+<%- include('../rodape.ejs') %>

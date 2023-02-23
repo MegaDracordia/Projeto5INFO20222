@@ -1,0 +1,27 @@
+<%- include('../cabecalho.ejs') %>
+    <form method="post" enctype="multipart/form-data">
+        <br><br>
+        Id<br>
+        <input type="text" name="id" readonly value="<%=Carro._id%>">
+        <br><br>
+        Placa<br>
+        <input type="text" name="placa" placeholder="Informe a placa do carro" value="<%=Carro.placa%>">
+        <br><br>
+        Marca<br>
+        <input type="text" name="marca" placeholder='Informe a marca do carro' value="<%=Carro.marca%>">
+        <br><br>
+        Ano<br>
+        <input type="date" name="ano" placeholder="Informe o ano em que o carro foi fabricado" value="<%=Carro.ano%>">
+        <br><br>
+        Modelo<br>
+        <input type="text" name="modelo" placeholder='Informe o modelo do carro' value="<%=Carro.modelo%>">
+        <br><br>
+        Dono<br>
+        <input type="text" name="dono" placeholder='Informe o nome do dono' value="<%=Carro.dono%>">
+        <br><br>
+        Foto<br>
+        <input type="file" name="foto">
+        <br><br>
+        <input type="submit" value="Editar">
+    </form>
+<%- include('../rodape.ejs') %>

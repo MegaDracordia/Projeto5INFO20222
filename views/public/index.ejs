@@ -1,0 +1,147 @@
+<!doctype html>
+<html lang="pt-br">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+    <meta name="generator" content="Hugo 0.108.0">
+    <title>Blog</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+    <meta name="theme-color" content="#712cf9">
+
+
+    <style>
+      .bd-placeholder-img {
+        font-size: 1.125rem;
+        text-anchor: middle;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        user-select: none;
+      }
+
+      @media (min-width: 768px) {
+        .bd-placeholder-img-lg {
+          font-size: 3.5rem;
+        }
+      }
+
+      .b-example-divider {
+        height: 3rem;
+        background-color: rgba(0, 0, 0, .1);
+        border: solid rgba(0, 0, 0, .15);
+        border-width: 1px 0;
+        box-shadow: inset 0 .5em 1.5em rgba(0, 0, 0, .1), inset 0 .125em .5em rgba(0, 0, 0, .15);
+      }
+
+      .b-example-vr {
+        flex-shrink: 0;
+        width: 1.5rem;
+        height: 100vh;
+      }
+
+      .bi {
+        vertical-align: -.125em;
+        fill: currentColor;
+      }
+
+      .nav-scroller {
+        position: relative;
+        z-index: 2;
+        height: 2.75rem;
+        overflow-y: hidden;
+      }
+
+      .nav-scroller .nav {
+        display: flex;
+        flex-wrap: nowrap;
+        padding-bottom: 1rem;
+        margin-top: -1px;
+        overflow-x: auto;
+        text-align: center;
+        white-space: nowrap;
+        -webkit-overflow-scrolling: touch;
+      }
+      body {
+        margin-left: 50px;
+      }
+    </style>
+
+    
+    <!-- Custom styles for this template -->
+    <link href="https://fonts.googleapis.com/css?family=Playfair&#43;Display:700,900&amp;display=swap" rel="stylesheet">
+  </head>
+  <body>
+<div class="container">
+  <header class="blog-header lh-1 py-3">
+    <div class="row flex-nowrap justify-content-between align-items-center">
+      <div class="col text-center">
+        <h1>Blog do IFSul</h1>
+      </div>
+    </div>
+  </header>
+</div>
+
+  <div class="row g-5">
+    <div class="col-md-8">
+      <h1 class="pb-4 mb-4 fst-italic border-bottom">
+        Atendimentos
+      </h1>
+<% Atendimentos.forEach(function(atendimento){%>
+      <article class="blog-post">
+        <p class="blog-post-meta"><%=moment(atendimento.data).format('DD/MM/YYYY') %> por  <% atendimento.mecanico.forEach(function(mecanico){%> <a href="/admin/mecanico/lst"><%=mecanico.nome %></a>
+          <% })%></p>
+        <div>
+          <img style="width: 65%; height:  65%;" src="/fotos/<%=atendimento.carro.foto%>" class="rounded" alt="Foto do Carro">
+        </div>
+        <br>
+        <h2>Descricao do Problema</h2>
+        <br>
+        <h5><%=atendimento.descricaoProblema %></h5>
+
+        <hr>
+      </article>
+<% })%>
+    </div>
+
+    <div class="col-md-4">
+      <div class="position-sticky" style="top: 2rem;">
+        <div class="p-4 mb-3 bg-light rounded">
+          <h4 class="fst-italic">Sobre</h4>
+          <p class="mb-0">Aqui você pode interagir com os modelos: Mecânico, Carro e Atendimento.</p>
+        </div>
+
+        <div class="p-4">
+          <h4 class="fst-italic">Mecânico</h4>
+          <ol class="list-unstyled">
+            <li><a href="admin/mecanico/lst">Listar Mecânicos</a></li>
+            <li><a href="admin/mecanico/add">Adicionar Mecânico</a></li>
+          </ol>
+        </div>
+
+        <div class="p-4">
+          <h4 class="fst-italic">Carro</h4>
+          <ol class="list-unstyled">
+            <li><a href="admin/carro/lst">Listar Carros</a></li>
+            <li><a href="admin/carro/add">Adicionar Carro</a></li>
+          </ol>
+        </div>
+        <div class="p-4">
+          <h4 class="fst-italic">Atendimento</h4>
+          <ol class="list-unstyled">
+            <li><a href="admin/atendimento/lst">Listar Atendimentos</a></li>
+            <li><a href="admin/atendimento/add">Adicionar Atendimento</a></li>
+          </ol>
+        </div>
+      </div>
+    </div>
+  </div>
+  <footer class="blog-footer">
+    <p>
+      <a href="/" >Back to top</a>
+    </p>
+  </footer>
+</main>  
+  </body>
+</html>

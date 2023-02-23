@@ -1,0 +1,33 @@
+<%- include('../cabecalho.ejs') %>
+    <form method="post">
+        <input type="text" name="pesquisar">
+        <input type="submit" value="Pesquisar" class="btn btn-primary">
+    </form>
+
+    <table>
+        <tr>
+            <th style="text-align: justify">Id</th>
+            <th style="text-align: justify">Carro</th>
+            <th style="text-align: justify">Descrição</th>
+            <th style="text-align: justify">Mecânico</th>
+            <th style="text-align: justify">Data</th>
+            <th style="text-align: justify">Editar</th>
+            <th style="text-align: justify">Deletar</th>
+        </tr>
+        <% Atendimentos.forEach(function(atendimento){%>
+        <tr>
+            <td style="text-align: justify"><%=atendimento._id %></td>
+            <td style="text-align: justify"><%=atendimento.carro.placa %></td>
+            <td style="text-align: justify"><%=atendimento.descricaoProblema %></td>
+            <td style="text-align: justify">
+                <%atendimento.mecanico.forEach(function(mecanico){ %>
+                    <%=mecanico.nome%><br>
+                <%})%>
+            </td>
+            <td style="text-align: justify"><%=atendimento.data %></td>
+            <td style="text-align: justify"><a href="/admin/atendimento/edt/<%=atendimento.id %>">Editar</a></td>
+            <td style="text-align: justify"><a href="/admin/atendimento/del/<%=atendimento.id %>">Excluir</a></td>
+        </tr>
+        <% })%>
+    </table>
+<%- include('../rodape.ejs') %>

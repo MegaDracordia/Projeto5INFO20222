@@ -1,0 +1,21 @@
+<%- include('../cabecalho.ejs') %>
+    <form method="post"> 
+        Carro<br>
+        <select class="form-select" name="carro" aria-label="Selecione um carro">
+            <% Carros.forEach(function(carro) { %>
+              <option value="<%= carro._id %>"><%= carro.placa %></option>
+            <% }); %>
+        </select>
+        Problema<br>
+        <textarea class="form-control" name="descricaoProblema" placeholder="Informe o problema"></textarea>
+        <br><br>
+        Mecânico<br>
+        <select  class="form-select" name="mecanico" aria-label="Selecione um mecânico" multiple>
+            <% Mecanicos.forEach(function(mecanico) { %>
+              <option value="<%= mecanico._id %>"><%= mecanico.nome %></option>
+            <% }); %>
+        </select>
+        <br><br>
+        <input type="submit" value="Adicionar">
+    </form>
+<%- include('../rodape.ejs') %>
